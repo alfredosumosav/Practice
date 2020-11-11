@@ -1,3 +1,10 @@
+class ListNode {
+  constructor(val = null, next = null) {
+    this.val = val;
+    this.next = next;
+  }
+}
+
 var mergeTwoLists = function (l1, l2) {
   if (!l1 && !l2) return null;
 
@@ -29,3 +36,20 @@ var mergeTwoLists = function (l1, l2) {
 
   return head;
 };
+
+let n0 = new ListNode(1);
+let n1 = new ListNode(2);
+let n2 = new ListNode(4);
+
+let n3 = new ListNode(1);
+let n4 = new ListNode(3);
+let n5 = new ListNode(4);
+
+n0.next = n1;
+n1.next = n2;
+n3.next = n4;
+n4.next = n5;
+
+console.log(mergeTwoLists(n0, n3)); // -> [1,1,2,3,4]
+console.log(mergeTwoLists(null, null)); // -> []
+console.log(mergeTwoLists(null, n3)); // [1,3,4]
