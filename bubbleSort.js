@@ -29,4 +29,14 @@ function bubbleSort(array) {
   return array;
 }
 
+console.log(bubbleSort([7, 7, 8, 8, 9, 9]));
 console.log(bubbleSort([9, 7, 8, 8, 9, 7]));
+console.log(bubbleSort([8, 8, 7, 9, 9, 9, 8, 9, 7]));
+console.log(bubbleSort([9, 9, 9, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7]));
+console.log(bubbleSort([9, 9, 9, 7, 7, 8, 9, 7, 8, 9, 7, 9]));
+console.log(bubbleSort([9, 9, 7, 7, 8, 8]));
+console.log(bubbleSort([9, 7, 9]));
+console.log(bubbleSort([8, 7, 8]));
+console.log(bubbleSort([7, 8, 7, 8]));
+console.log(bubbleSort([8, 8, 7, 8]));
+console.log(bubbleSort([8, 8, 7, 7, 8]));
