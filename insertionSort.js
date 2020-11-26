@@ -14,3 +14,15 @@ function insertionSort(arr) {
   }
   return arr;
 }
+
+console.log(insertionSort([7, 7, 8, 8, 9, 9]));
+console.log(insertionSort([9, 7, 8, 8, 9, 7]));
+console.log(insertionSort([8, 8, 7, 9, 9, 9, 8, 9, 7]));
+console.log(insertionSort([9, 9, 9, 9, 9, 8, 8, 8, 8, 7, 7, 7, 7, 7, 7]));
+console.log(insertionSort([9, 9, 9, 7, 7, 8, 9, 7, 8, 9, 7, 9]));
+console.log(insertionSort([9, 9, 7, 7, 8, 8]));
+console.log(insertionSort([9, 7, 9]));
+console.log(insertionSort([8, 7, 8]));
+console.log(insertionSort([7, 8, 7, 8]));
+console.log(insertionSort([8, 8, 7, 8]));
+console.log(insertionSort([8, 8, 7, 7, 8]));
