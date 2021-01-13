@@ -1,3 +1,9 @@
+/*
+Return a new array by rotating the given array so that the element at the given index is the first element of the new array.
+
+If the given index is negative then it rotates in the opposite direction, starting from the end of the given array where -1 is the last element.
+*/
+
 // loop until i reaches index
   // based on index sign
     // if +
