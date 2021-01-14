@@ -16,6 +16,9 @@ Explanation: Each pair in the array are good.
 Input: nums = [1,2,3]
 Output: 0
 */
+
+// Time Complexity
+// O(n) time and O(1) space
 var numIdenticalPairs = function (nums) {
   let goodPairs = 0;
   let h = {};
