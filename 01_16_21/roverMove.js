@@ -77,36 +77,35 @@ LEFT → pos 4, No effect
 DOWN → pos 8
 */
 
+// Time and Space complexity
+// O(n) time and O(1) space, where n is the # of commands received
 var roverMove = function (n, cmds) {
-  // trackear x, y para posicion
-  // y variable de resultado
+  // track x, y for position
   let x = 0;
   let y = 0;
-  let result = 0;
 
-
-  // iterar el array de comandos y para cada comando...
+  // loop through the cmds array and for each cmd...
   for (let i = 0; i < cmds.length; i++) {
-    // comando
+    // command
     let cmd = cmds[i];
 
-    // siguiente movimiento
+    // next move
     let nextMove = validMove(n, x, y, cmd);
 
-    // es movimiento valido...
+    // is valid movement...
     if (nextMove[0] !== -1) {
-      // actualiza la posicion
+      // update the position
       x = nextMove[0];
       y = nextMove[1];
     }
   }
 
-  // retornar el resultado, usando formula
+  // return the result, using the given formula
   return ((x * n) + y);
 }
 
 function validMove(n, x, y, cmd) {
-  // movimientos validos
+  // valid movements
   const CMDS = {
     'UP': [-1, 0],
     'DOWN': [1, 0],
@@ -114,20 +113,20 @@ function validMove(n, x, y, cmd) {
     'RIGHT': [0, 1],
   };
 
-  // no es un movimiento valido
+  // is not a valid movement
   if (CMDS[cmd] === undefined) return [-1, -1];
 
-  // direccion del movimiento
+  // movement direction
   let move = CMDS[cmd];
 
-  // nueva fila y columna
+  // new row and column
   let row = x + move[0];
   let col = y + move[1];
 
-  // si esta fuera del limite de la matrix, no es valido
+  // if it is out of the matrix boundaries, it is not valid
   if (row < 0 || row >= n || col < 0 || col >= n) return [-1, -1];
 
-  // esta dentro de la matrix y es valido
+  // it is inside the matrix and is valid
   return [row,col];
 }
 
