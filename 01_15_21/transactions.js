@@ -53,6 +53,8 @@ Given the following counts of userids, there are only 3 userids that meet or exc
 
 345366 -4 , 38239 -5, 029323-3, 89921-1
 */
+
+// O(n^2) time and O(n + m) space, where n = size of logData and m = # userids
 var transactions = function (logData, threshold) {
   let result = [];
   let hash = {};
