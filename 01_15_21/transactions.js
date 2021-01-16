@@ -64,30 +64,30 @@ var transactions = function (logData, threshold) {
     let userid1 = ele[0];
     let userid2 = ele[1];
 
-    // no estan guardados
+    // not saved
     if (hash[userid1] === undefined) {
       hash[userid1] = 1;
     } else {
-    // estan guardados
+    // are saved
       hash[userid1] += 1;
     }
 
-    // si son diferentes...
+    // if different...
     if (userid1 !== userid2) {
-      // no estan guardados
+      // not saved
       if (hash[userid2] === undefined) {
         hash[userid2] = 1;
       } else {
-      // estan guardados
+      // are saved
         hash[userid2] += 1;
       }
     }
 
   }
 
-  // solo los que tienen threshold o mas van pal array
+  // only those that are counted threshold or more times, go to the array
   for (userid in hash) {
-    // si tiene mas de threshold, va pal array
+    // if counted threshold or more times, go to the array
     if (hash[userid] >= threshold) {
       result.push(userid);
     }
