@@ -18,10 +18,16 @@ var countReviewCombinations = function (num, lengths, minReviews, minLength, max
   return counter;
 }
 
-function factorial(num) {
-  if (num <= 1) return 1;
+function factorial(num, memo = {}) {
+  if (memo[num] !== undefined) return memo[num];
 
-  return num * factorial(num - 1);
+  if (num <= 1) {
+    memo[num] = 1;
+    return memo[num];
+  }
+
+  memo[num] = num * factorial(num - 1);
+  return memo[num];
 }
 
 console.log(countReviewCombinations(8, [6, 13, 5, 10, 12, 4, 2, 15], 3, 4, 10)); // 5
