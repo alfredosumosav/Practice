@@ -1,36 +1,42 @@
+// Time and Space complexity
+// O(n^2) time and O(m) space, where n is the number of molecules and m is the
+// number of unique coordinates
 var squaredShortestDistance = function (num, positionX, positionY) {
-  // variable para la minima distancia euclidiana al cuadrado, empieza en Infinity
+  // the minimum Squared Euclidian Distance, Initial value is Infinity
   let minSquaredEuclidianDistance = Infinity;
-  // un set de las posiciones visitadas
+  // a set with the visited positions
   let visited = new Set();
 
-  // encuentra cada par y para cada par de moleculas
+  // find each pair of molecules and for each pair...
   for (let i = 0; i < positionX.length; i++) {
-    // molecula A
+    // molecule A
     let moleculeA = [positionX[i], positionY[i]];
 
-    // recuerda esta posicion
+    // remember this position
     visited.add(`${positionX[i]},${positionY[i]}`);
 
     for (let j = i + 1; j < positionY.length; j++) {
-      // molecula B
+      // molecule B
       let moleculeB = [positionX[j], positionY[j]];
 
-      // si no he visitado esta posicion, tengo posiciones diferentes, entonces
+      // if this position has not been visited, the positions are different, so
       if (!visited.has(`${positionX[j]},${positionY[j]}`)) {
-        // calcula la distancia euclidiana al cuadrado
-        let squaredEuclidianDistance = ((moleculeB[0] - moleculeA[0]) ** 2) + ((moleculeB[1] - moleculeA[1]) ** 2);
+        // calculate the squared euclidian distance
+        let squaredEuclidianDistance =
+          (moleculeB[0] - moleculeA[0]) ** 2 +
+          (moleculeB[1] - moleculeA[1]) ** 2;
 
-        // si es menor que la minima distancia euclidiana al cuadrado registrada
+        // if it is smaller than the minimum squared euclidian distance registered...
         if (squaredEuclidianDistance < minSquaredEuclidianDistance) {
-          // actualiza la minima distancia euclidiana al cuadrado registrada a este valor
+          // ...update the minimum squared euclidian distance registered to this value
           minSquaredEuclidianDistance = squaredEuclidianDistance;
         }
+        // otherwise, it is bigger. So do not update
       }
     }
   }
 
-  // retorna la minima distancia euclidiana al cuadrado registrada
+  // return the minimum squared euclidian distance registered
   return minSquaredEuclidianDistance;
 };
 
