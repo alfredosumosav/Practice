@@ -5,6 +5,8 @@ of the sum of all elements of the array. If there is no such element,
 the method should return null.
 */
 
+// Time and Space complexity
+// O(n) time and O(1) space where n is the number of elements in the array.
 function allElseEqual(numbers) {
   var sum = 0;
 
