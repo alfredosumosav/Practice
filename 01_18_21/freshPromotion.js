@@ -79,62 +79,60 @@
   of group 1.
 */
 
+// Time and Space Complexity Analysis
+// O(n * m) time and O(1) space, where n is number of code items in codeList, 
+// and m is the max number of items in any one group of codeList
 var freshPromotions = function (codeList, shoppingCart) {
   let currentFruit;
   let currentGroup;
   let shoppingItem = null;
 
-  // si codeList esta vacio inicialmente, se gana automaticamente!
+  // if codeList is empty, the customer is a winner automatically
   if (codeList.length === 0) return 1;
 
-  // para todos los grupos de codeList
+  // for each codeList group
   for (let i = 0; i < codeList.length; i++) {
-    // console.log(codeList[i]);
-    // cada grupo, with the expected order of the fruits
+    // group of fruites with the expected order of the fruits
     currentGroup = codeList[i];
-    // empezamos con current fruit
+
+    // remove the expected fruit to be matched
     currentFruit = currentGroup.shift();
 
+    // run while the group of fruits and the shopping list have lengths
     while (currentGroup.length && shoppingCart.length) {
-      // si el shopping item no existe (null), es la primera vez.
+      // if the shopping item does not exists, it is the first loop
       if (shoppingItem === null) {
-        // hay match entre current fruit y el primer item de shopping cart?
-        // si hay match actualiza shopping item y current fruit a los siguientes elementos
+        // is there a match between current fruit and the first item of shopping cart?
+        // if there is match, update shopping item and current fruit to the next elements
         let tempItem = shoppingCart.shift();
         if (tempItem === currentFruit) {
           shoppingItem = shoppingCart.shift();
           currentFruit = currentGroup.shift();
         } else {
-          // de lo contrario, no hay match. continua.
+          // otherwise, there is no match. continue to the next loop
           continue;
         }
       }
 
-      // shopping item existe y ya hay un match.
-      // si current fruit es "anything", hay un match entre anything y el valor de shopping item
+      // the shopping item is not null
+      // if current fruit es "anything", there is a match between anything and the value of shopping item
       if (currentFruit === "anything") {
-        // actualiza shopping item y current fruit a los siguientes elementos y continua.
+        // update shopping item and current fruit to the next elements and continue
         shoppingItem = shoppingCart.shift();
         currentFruit = currentGroup.shift();
         continue;
       }
 
-      // si el siguiente shopping item no es match con current fruit, se
-      // rompio el orden y el cliente perdio la promocion
+      // if the next shopping item is not a match with current fruit the order was broken and the client lose the promotion
       if (currentFruit !== shoppingItem) return 0;
 
-      // si llega aqui, definitivamente es un match. entonces actualiza
-      // shopping item y current fruit a los siguientes elementos
+      // there is a match, so update shopping item and current fruit to the next elements
       shoppingItem = shoppingCart.shift();
       currentFruit = currentGroup.shift();
     }
   }
 
-  if (currentGroup.length === 0) {
-    return (shoppingCart.length >= 0) ? 1 : 0;
-  }
-
-  return (shoppingCart.length === 0 && currentGroup.length === 0) ? 1 : 0;
+  return (shoppingCart.length >= 0 && currentGroup.length === 0) ? 1 : 0;
 };
 
 console.log(freshPromotions([["apple", "apple"], ["banana", "anything", "banana"]], ["orange", "apple", "apple", "banana", "orange", "banana"])); // 1
