@@ -4,6 +4,8 @@ numbers and returns a new array containing the sums of
 adjacent numbers in the original array. See the examples.
 */
 
+// Time and Space Complexity Analysis
+// O(n) time and O(n) space, where n is the size of the input array.
 function adjacentSum(numbers) {
   var result = [];
 
