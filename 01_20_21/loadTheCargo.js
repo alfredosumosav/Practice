@@ -49,7 +49,7 @@ var loadTheCargo = function (num, containers, itemSize, itemsPerContainer, cargo
   // iterar sobre containers
   for (let i = 0; i < num; i++) {
     // para cada contenedor, empujar el # de items por container multiplicado el # de contenedores
-    numOfContainers = containers[i];
+    const numOfContainers = containers[i];
 
     for (let j = 0; j < numOfContainers; j++) {
       containerItems.push(itemsPerContainer[i]);
