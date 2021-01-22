@@ -9,6 +9,7 @@ EXAMPLES
 console.log(mostVowels("what a wonderful life"))// => 'wonderful'
 */
 
+// O(n * m) time and O(m) space, where n is the number of words in a sentence and m is the number characters in a word
 function mostVowels(str) {
   var vowels = "aeiou";
   var words = str.split(" ");
