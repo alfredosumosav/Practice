@@ -8,6 +8,7 @@ validWalk('nnnn'); // => false
 validWalk('nenessww'); // => true
 */
 
+// O(n) time and O(1) space, where n is the number of characters in the input string
 function validWalk(string) {
   var directionObj = { n: 1, s: -1, e: -1, w: 1 };
   var position = 0;
