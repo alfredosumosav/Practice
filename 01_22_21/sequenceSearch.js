@@ -4,13 +4,6 @@ You are given two strings, a sequence and a key. Write a function that
 determines if the characters of the key appear in order (although not
 neccesarily contiguously) in the sequence.
 
-EXAMPLES:
-
-sequenceSearch('arcata', 'cat'); // => true
-sequenceSearch('c1a2t3', 'cat'); // => true
-sequenceSearch('cta', 'cat'); // => false
-sequenceSearch('caat', 'cat'); // => true
-
 Constraint:
 You may not use Regular Expressions (RegExp) in your solution.
 */
