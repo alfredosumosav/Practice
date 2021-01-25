@@ -5,6 +5,8 @@ The method should return the last index where the
 character can be found in the string.
 */
 
+// Time and Space complexity Analysis
+// O(n) time and O(1) space where n is the number of characters in the string
 function lastIndex(str, char) {
   var lastI = null;
   for (var i = 0; i < str.length; i++) {
