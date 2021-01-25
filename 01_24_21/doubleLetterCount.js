@@ -3,6 +3,9 @@ Write a method that takes in a string and returns
 the number of times that the same letter repeats twice in a row.
 */
 
+// Time and Space complexity Analysis
+// O(n * m) time and O(n) space where n is the # of words in the string and m 
+// is the # of characters in a word
 function doubleLetterCount(str) {
   var count = 0;
   var arr = str.split(" ");
