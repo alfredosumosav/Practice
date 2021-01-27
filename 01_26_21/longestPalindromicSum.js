@@ -1,6 +1,5 @@
 // O(n^3) time and O(n) space
 function longestPalindromicSubstring(string) {
-  // Write your code here.
   let result = [];
   let longest = "";
   size = 1;
@@ -22,6 +21,7 @@ function longestPalindromicSubstring(string) {
   return longest;
 }
 
+// O(n) time and O(n) space
 function isPalindrome(string) {
   let reversed = string.split("").reverse().join("");
   return string === reversed;
