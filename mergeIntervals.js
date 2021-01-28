@@ -1,3 +1,10 @@
+/*
+Given an array of intervals where intervals[i] = [starti, endi], merge all 
+overlapping intervals, and return an array of the non-overlapping intervals 
+that cover all the intervals in the input.
+*/
+
+// O(n * log(n)) time and O(n) space
 var merge = function (intervals) {
   // sort intervals in order (start_i as reference)
   intervals = intervals.sort((a, b) => a[0] - b[0]);
