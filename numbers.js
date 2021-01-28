@@ -1,3 +1,31 @@
+/*
+  create a function to add 2 numbers.
+
+  You are required to add very big numbers, in the order of 10^33 and still 
+  return the exact value as a string
+
+  example 1
+  input:
+
+  string1 = "100000000000000000000000000000002"
+  string1 = "100000000000000000000000000000001"
+
+  output:
+
+  "200000000000000000000000000000003"
+
+  example 2
+
+  input:
+
+  string1 = "3.14"
+  string1 = "0.9"
+
+  output:
+
+  "4.04"
+*/
+
 var addNumbers = function (string1, string2) {
   let s1 = string1.split("");
   let s2 = string2.split("");
