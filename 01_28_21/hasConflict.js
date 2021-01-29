@@ -1,27 +1,31 @@
+// O(n * log(n)) time and O(1) space
 var hasConflict = function (schedules) {
+  // format schedule seconds to milliseconds
+  schedules = schedules.map(schedule => {
+    return {
+      scheduleId: schedule.scheduleId,
+      startTime: Number(`${schedule.startTime[schedule.startTime.length - 2]}${schedule.startTime[schedule.startTime.length - 1]}`) * 1000,
+      endTime: Number(`${schedule.endTime[schedule.endTime.length - 2]}${schedule.endTime[schedule.endTime.length - 1]}`) * 1000
+    };
+  });
+
   // sort schedules in increasing order, using startTime as a reference
   // the schedule intervals will be ordered from smallest to largest startTime
-  schedules = schedules.sort((a, b) => { 
-    startTime1 = a.startTime.split(":");
-    startTime2 = b.startTime.split(":");
-
-    startTimeInSeconds1 = Number(startTime1[startTime1.length - 1]);
-    startTimeInSeconds2 = Number(startTime2[startTime2.length - 1]);
-
-    return startTimeInSeconds1 - startTimeInSeconds2;
-  });
+  schedules = schedules.sort((a, b) => a.startTime - b.startTime);
 
   // the initial interval in the array
   const lastInterval = schedules.shift();
+
   // grab the end time in milliseconds
-  let lastIntervalEndTimeInMilliseconds = Number(lastInterval.endTime.split(":")[2]) * 1000;
+  let lastIntervalEndTimeInMilliseconds = lastInterval.endTime;
 
   
   while (schedules.length) {
     // grab the next interval
     const nextInterval = schedules.shift();
+
     // grab the start time in milliseconds
-    let nextIntervalStartTimeInMilliseconds = Number(nextInterval.startTime.split(":")[2]) * 1000;
+    let nextIntervalStartTimeInMilliseconds = nextInterval.startTime;
 
     // there is a conflict, so return true
     if (lastIntervalEndTimeInMilliseconds - nextIntervalStartTimeInMilliseconds > 0) return true;
