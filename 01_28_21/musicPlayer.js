@@ -1,3 +1,6 @@
+// Build a system that allows a customer to play a list of songs and implement 
+// modifications, using calls to the API's built-in methods.
+
 class MusicPlayer {
   constructor(playlist) {
     this.originalPlaylist = playlist;
