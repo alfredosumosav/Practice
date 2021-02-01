@@ -23,3 +23,8 @@ function nickname(name) {
   var str = name.slice(0, i + 1).toUpperCase();
   return str + '-' + str;
 }
+
+console.log(nickname('manuel')); // => 'MANU-MANU'
+console.log(nickname('pikachu')); // => 'PIKA-PIKA'
+console.log(nickname('bootcamp')); // => 'BOO-BOO'
+console.log(nickname('bob')); // => 'BOB-BOB'
