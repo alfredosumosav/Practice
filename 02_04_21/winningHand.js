@@ -9,6 +9,7 @@ Q = 2 points
 K = 3 points
 */
 
+// O(1) time O(1) space
 function winningHand(hand1, hand2) {
   const cards = {
     J: 1,
