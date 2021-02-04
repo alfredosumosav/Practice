@@ -2,7 +2,8 @@
 Write a function `reverseHipsterfy(sentence)` that takes in a sentence
 and removes all vowels, except the last vowels of every word.
 */
-
+// O(c * w) time and O(c * w) where c is the # of characters and w is the number 
+// of words in the sentence
 function reverseHipsterfy(sentence) {
   var words = sentence.split(" ");
 
@@ -14,11 +15,11 @@ function reverseHipsterfy(sentence) {
 }
 
 function removeFirstVowels(str) {
-  var ans = "";
-  var lastVowel = "";
+  let ans = "";
+  let lastVowel = "";
 
   for (var i = str.length - 1; i >= 0; i--) {
-    var char = str[i];
+    const char = str[i];
     if (lastVowel === "" && vowels.indexOf(char) > -1) {
       lastVowel = char;
       ans = char + ans;
@@ -30,7 +31,7 @@ function removeFirstVowels(str) {
   return ans;
 }
 
-var vowels = "aeiou";
+const vowels = "aeiou";
 
 console.log(reverseHipsterfy("proper")); // => 'prper'
 console.log(reverseHipsterfy("proper tonic panther")); // => 'prper tnic pnther'
