@@ -22,6 +22,8 @@ sample output:
 12 // calculated as: 5 + 2 + 2 * (7 - 1) + 3 + 2 * (6 + 3 * (-13 + 8) + 4)
 
 */
+// O(n) time and O(d) space, where n is the total number of elements in the array
+// and d is the greatest depth of special arrays in the array
 function productSum(array, multiplier = 1) {
   let sum = 0;
 
