@@ -1,5 +1,6 @@
 // https://www.algoexpert.io/questions/Two%20Number%20Sum
 
+// TODO: improve time and space complexity
 // O(n^2) time | O(1) space
 function twoNumberSum(array, targetSum) {
   for (let i = 0; i < array.length; i++) {
