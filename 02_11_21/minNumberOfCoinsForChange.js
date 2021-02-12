@@ -1,3 +1,4 @@
+// O(nd) time | O(n) space
 function minNumberOfCoinsForChange(n, denoms) {
   let numCoins = new Array(n + 1).fill(Infinity);
   numCoins[0] = 0;
