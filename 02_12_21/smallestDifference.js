@@ -1,6 +1,7 @@
 // https://www.algoexpert.io/questions/Smallest%20Difference
 
-// O(n^2) time | O(1) space
+// TODO: improve time complexity
+// O(n^2) time | O(1) space - can this be improved? (O(n^2) time | O(1) space)
 function smallestDifference(arrayOne, arrayTwo) {
   // Write your code here. [-1, 5, 28, 3], [26, 134, 135, 15]
   let minPair = []; // [28, 26]
