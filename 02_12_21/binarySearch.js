@@ -1,5 +1,6 @@
 // https://www.algoexpert.io/questions/Binary%20Search
 
+// O(log(n)) time | O(1) space
 function binarySearch(array, target) {
   let left = 0;
   let right = array.length - 1;
