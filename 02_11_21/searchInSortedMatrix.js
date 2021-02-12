@@ -1,3 +1,4 @@
+// O(n + m) time and O(1) space where n is the number of rows and m the number of cols
 function searchInSortedMatrix(matrix, target) {
   let i = 0;
   let j = matrix[0].length - 1;
