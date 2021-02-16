@@ -40,3 +40,4 @@ function reverseCharacters(message, leftIndex, rightIndex) {
 console.log(reverseWords(['c', 'a', 'k', 'e', ' ',
                           'p', 'o', 'u', 'n', 'd', ' ',
                           's', 't', 'e', 'a', 'l']));
+// prints 'steal pound cake'
