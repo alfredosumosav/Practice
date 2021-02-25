@@ -4,6 +4,7 @@ Each number should be either divisible by 4 or 6, BUT NOT BOTH. The numbers
 should be in reverse-sequential order.
 */
 
+// O(n) time | O(n) space
 function mysticNumbers(max) {
   var ans = [];
   for (var i = max - 1; i > 0; i--) {
