@@ -16,3 +16,6 @@ function mysticNumbers(max) {
   }
   return ans;
 }
+
+console.log(mysticNumbers(25)); // [ 20, 18, 16, 8, 6, 4 ]
+console.log(mysticNumbers(14)); // [ 8, 6, 4 ]
