@@ -4,6 +4,7 @@ The function should return a number representing the longest consecutive streak
 of wins. You may assume the only characters in the string are 'W' and 'L'.
 */
 
+// O(n) time | O(n) space
 function bestWinStreak(str) {
   var longestStreak = "";
   var currentStreak = "";
