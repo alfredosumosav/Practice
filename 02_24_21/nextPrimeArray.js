@@ -6,6 +6,7 @@ that comes after 5 is 7.
 
 */
 
+// O(n^2) time | O(n) space
 function nextPrimeArray(array) {
   for (var i = 0; i < array.length; i++) {
     if (isPrime(array[i])) {
@@ -16,6 +17,7 @@ function nextPrimeArray(array) {
   return array;
 }
 
+// O(n) time | O(n) space
 function isPrime(num) {
   if (num < 2) {
     return false;
