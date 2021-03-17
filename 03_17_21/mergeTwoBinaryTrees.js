@@ -1,5 +1,5 @@
 // https://leetcode.com/problems/merge-two-binary-trees/
-
+// O(2^n) time and O(n) space where n is the largest depth between the nodes
 var mergeTrees = function (root1, root2) {
   // if one of the nodes is null, return the other
   if (!root1 || !root2) {
