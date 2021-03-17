@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/partition-labels/
 
+// O(n) time and O(n) space
 var partitionLabels = function (S) {
   const dict = "abcdefghijklmnopqrstuvwxyz";
   let lastIndexes = {};
