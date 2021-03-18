@@ -1,3 +1,17 @@
+function reconstructPath(howWeReachedNodes, startNode, endNode) {
+  const shortestPath = [];
+
+  // Start from the end of the path and work backwards
+  let currentNode = endNode;
+
+  while (currentNode !== null) {
+    shortestPath.push(currentNode);
+    currentNode = howWeReachedNodes[currentNode];
+  }
+
+  return shortestPath.reverse(); // No longer reversed
+}
+
 // Assume we have an efficient queue implementation, Queue()
 // with enqueue and dequeue methods and a size property
 
