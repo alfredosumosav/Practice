@@ -1,30 +1,36 @@
+// Assume we have an efficient queue implementation, Queue()
+// with enqueue and dequeue methods and a size property
+
 function reconstructPath(howWeReachedNodes, startNode, endNode) {
-  const shortestPath = [];
+  const reversedShortestPath = [];
 
   // Start from the end of the path and work backwards
   let currentNode = endNode;
 
   while (currentNode !== null) {
-    shortestPath.push(currentNode);
+    reversedShortestPath.push(currentNode);
     currentNode = howWeReachedNodes[currentNode];
   }
 
-  return shortestPath.reverse(); // No longer reversed
+  // Reverse our path to get the right order
+  return reversedShortestPath.reverse(); // No longer reversed
 }
 
-// Assume we have an efficient queue implementation, Queue()
-// with enqueue and dequeue methods and a size property
-
 function bfsGetPath(graph, startNode, endNode) {
+  if (!graph.hasOwnProperty(startNode)) {
+    throw new Error("Start node not in graph!");
+  }
+  if (!graph.hasOwnProperty(endNode)) {
+    throw new Error("End node not in graph!");
+  }
+
   const nodesToVisit = new Queue();
   nodesToVisit.enqueue(startNode);
 
-  // Keep track of what nodes we've already seen
-  // so we don't process them twice
-  const nodesAlreadySeen = new Set([startNode]);
-
   // Keep track of how we got to each node
-  // we'll use this to reconstruct the shortest path at the end
+  // We'll use this to reconstruct the shortest path at the end
+  // We'll ALSO use this to keep track of which nodes we've
+  // already visited
   const howWeReachedNodes = {};
   howWeReachedNodes[startNode] = null;
 
@@ -33,18 +39,18 @@ function bfsGetPath(graph, startNode, endNode) {
 
     // Stop when we reach the end node
     if (currentNode === endNode) {
-      // Somehow reconstruct the path here
-      return path;
+      return reconstructPath(howWeReachedNodes, startNode, endNode);
     }
 
     graph[currentNode].forEach((neighbor) => {
-      if (!nodesAlreadySeen.has(neighbor)) {
-        nodesAlreadySeen.add(neighbor);
+      if (!howWeReachedNodes.hasOwnProperty(neighbor)) {
         nodesToVisit.enqueue(neighbor);
-
-        // Keep track of how we got to this node
         howWeReachedNodes[neighbor] = currentNode;
       }
     });
   }
+
+  // If we get here, then we never found the end node
+  // so there's NO path from startNode to endNode
+  return null;
 }
