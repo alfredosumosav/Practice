@@ -1,5 +1,6 @@
 // https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
+// O(2^n) time and O(n) space
 var maxDepth = function (root, initialDepth = 0) {
   // if the node is null, return the initial depth
   if (!root) return initialDepth;
