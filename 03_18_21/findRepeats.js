@@ -15,6 +15,10 @@ Thing is, the damn thing came with the RAM soldered right to the motherboard, so
 we can't upgrade our RAM.So we need to optimize for space!
 */
 
+// Time and space complexity analysis
+// O(nlog(n)) time
+// O(1) space, where n is the length of the input
+
 function findRepeat(numbers) {
 
   let floor = 1;
