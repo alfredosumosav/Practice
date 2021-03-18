@@ -1,5 +1,8 @@
 // https://www.interviewcake.com/question/javascript/inflight-entertainment
 
+// Time and space analysis
+// O(n) time where n is the number of movies' lengths available
+// O(n) space where n is the number of movies' lengths available
 function canTwoMoviesFillFlight(movieLengths, flightLength) {
 
   // Movie lengths we've seen so far
