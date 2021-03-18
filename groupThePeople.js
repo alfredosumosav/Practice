@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/group-the-people-given-the-group-size-they-belong-to/
+
 // O(n) time and O(n) space
 var groupThePeople = function (groupSizes) {
   let groups = [];
