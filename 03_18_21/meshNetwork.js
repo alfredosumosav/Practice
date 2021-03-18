@@ -1,3 +1,8 @@
+// Time and space complexity
+// O(N + M) time where N is the number of nodes in the graph and M is the number
+  // of crossings from the endNode to startNode
+// O(N) space where N is the number of nodes in the graph
+
 // Assume we have an efficient queue implementation, Queue()
 // with enqueue and dequeue methods and a size property
 
