@@ -1,9 +1,13 @@
- function TreeNode(val, left, right) {
+// https://leetcode.com/problems/invert-binary-tree/submissions/
+
+function TreeNode(val, left, right) {
      this.val = (val===undefined ? 0 : val)
      this.left = (left===undefined ? null : left)
      this.right = (right===undefined ? null : right)
  }
 
+// Time and space complexity analysis
+// O(2^n) time and O(n) space
 var invertTree = function (root) {
   if (!root) return null;
 
