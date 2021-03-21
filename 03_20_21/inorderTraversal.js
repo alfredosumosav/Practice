@@ -1,3 +1,7 @@
+// https://leetcode.com/problems/binary-tree-inorder-traversal/
+
+// Time and space complexity analysis
+// O(2^n) time and O(n) space, where n is the depth of the tree
 function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
     this.left = (left===undefined ? null : left)
