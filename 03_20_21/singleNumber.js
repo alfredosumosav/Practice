@@ -1,4 +1,9 @@
-var singleNumber = function(nums) {
+// https://leetcode.com/problems/single-number/submissions/
+
+// Time and space complexity analysis
+// O(n) time
+// O(1) space, where n is size of the input array
+var singleNumber = function (nums) {
   let numbersAlreadySeen = new Set();
 
   for (let i = 0; i < nums.length; i++) {
