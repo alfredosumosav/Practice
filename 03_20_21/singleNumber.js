@@ -3,12 +3,8 @@ var singleNumber = function(nums) {
 
   for (let i = 0; i < nums.length; i++) {
     const num = nums[i];
-    
-    if (numbersAlreadySeen.has(num)) {
-      numbersAlreadySeen.delete(num);
-    } else {
-      numbersAlreadySeen.add(num);
-    }
+
+    numbersAlreadySeen.has(num) ? numbersAlreadySeen.delete(num) : numbersAlreadySeen.add(num);
   }
   
   return numbersAlreadySeen.values().next().value;
