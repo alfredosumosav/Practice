@@ -5,6 +5,8 @@ the integers.
 The input arrayOfInts will always have at least three integers.
 */
 
+// Time and space complexity analysis
+// O(n) time and O(1) space, where n is the number of integers in the array input
 function highestProductOf3(arrayOfInts) {
   if (arrayOfInts.length < 3) {
     throw new Error("Less than 3 items!");
