@@ -23,6 +23,8 @@ Constraints:
   All the integers of nums are unique.
 */
 
+// Time and space complexity analysis
+// O(n*n!) time and O(n!) space, where n is the size of the array input
 var permute = function (nums) {
   // Base case
   if (nums.length <= 1) {
