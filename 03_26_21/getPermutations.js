@@ -36,6 +36,8 @@ output: stac
         cats 
 */
 
+// Time and space complexity analysis
+// O(n*n!) time and O(n!) space, where n is the size of the string input
 function getPermutations(string) {
   
   // Base case
