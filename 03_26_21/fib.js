@@ -1,3 +1,19 @@
+/*
+Write a function fib() that takes an integer n and returns the nth 
+Fibonacci number.
+
+Let's say our Fibonacci series is 0-indexed and starts with 0. So:
+
+  fib(0);  // => 0
+  fib(1);  // => 1
+  fib(2);  // => 1
+  fib(3);  // => 2
+  fib(4);  // => 3
+  ...
+*/
+
+// Time and space complexity analysis
+// O(n) time and O(1) space, where n is the nth Fibonacci number
 function fib(n) {
   // Edge cases:
   if (n < 0) {
@@ -26,3 +42,5 @@ function fib(n) {
 
   return current;
 }
+
+console.log(fib(5)); // 5
