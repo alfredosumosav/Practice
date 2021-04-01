@@ -7,8 +7,8 @@ return an array of all the integers in the range [1, n] that do not appear in nu
 // Time and space complexity analysis
 // O(n) time and O(n) space, where n is the size of the input array
 var findDisappearedNumbers = function (nums) {
-  let numbersPresent = new Array(nums.length + 1).fill(false);
-  let missingNumbers = [];
+  const numbersPresent = new Array(nums.length + 1).fill(false);
+  const missingNumbers = [];
 
   // for every value in nums, set the equivalent index in numbersPresent to true
   for (let i = 0; i < nums.length; i++) {
