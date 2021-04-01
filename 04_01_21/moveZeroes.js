@@ -1,4 +1,8 @@
-var moveZeroes = function(nums) {
+// https://leetcode.com/problems/move-zeroes/
+
+// Time and space complexity analysis
+// O(n) time and O(1) space, where n is the size of the input array
+var moveZeroes = function (nums) {
   let start = 0;
   for (let i = 0; i < nums.length; i++) {
     const NUM = nums[i];
