@@ -4,19 +4,23 @@
 return an array of all the integers in the range [1, n] that do not appear in nums.
 */
 
+// Time and space complexity analysis
+// O(n) time and O(n) space, where n is the size of the input array
 var findDisappearedNumbers = function (nums) {
-  let numbers = new Array(nums.length + 1).fill(false);
+  let numbersPresent = new Array(nums.length + 1).fill(false);
   let missingNumbers = [];
 
-  // iterar en cada numero y marcar el indice correspondiente a este valor como true en numbers
+  // for every value in nums, set the equivalent index in numbersPresent to true
   for (let i = 0; i < nums.length; i++) {
     const num = nums[i];
 
-    numbers[num] = true;
+    numbersPresent[num] = true;
   }
 
-  for (let j = 1; j < numbers.length; j++) {
-    if (numbers[j] === false) {
+  // for every index in numbersPresent, if it is not present. store the index in
+  // missingNumbers
+  for (let j = 1; j < numbersPresent.length; j++) {
+    if (numbersPresent[j] === false) {
       missingNumbers.push(j);
     }
   }
