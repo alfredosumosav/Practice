@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/evaluate-reverse-polish-notation
 
+// Time and space complexity analysis
+// O(n) time and O(n) space
 var evalRPN = function (tokens) { // ["4","13","5","/","+"]
     let lastOperations = []; // [4,13,5,]
     const operations = {
