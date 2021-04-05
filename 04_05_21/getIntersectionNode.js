@@ -5,6 +5,8 @@ function ListNode(val = null) {
   this.next = null;
 }
 
+// time and space complexity analysis
+// O(n) time and O(1) space, where n is length of the largest linked list
 var getIntersectionNode = function (headA, headB) {
   if (!headA || !headB) return null;
 
