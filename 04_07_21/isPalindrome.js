@@ -1,4 +1,8 @@
-var isPalindrome = function(head) {
+// https://leetcode.com/problems/palindrome-linked-list/submissions/
+
+// Time and space complexity analysis
+// O(n) time and O(n) space, where n is the total number of nodes of the linked list
+var isPalindrome = function (head) {
     // create a reversed linked list
     let currentNode = head;
     let previousNode = null;
