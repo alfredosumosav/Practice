@@ -20,20 +20,27 @@ function reverse(headOfList) {
   while (currentNode) {
     // create a new node
     newNode = new LinkedListNode(currentNode.value);
-    
     // point nextNode to next node
     nextNode = currentNode.next;
-    
     // assign next of new node to previous node
     newNode.next = previousNode;
-    
     // update previous node to current node
-    previousNode = currentNode;
-    
+    previousNode = newNode;
     // update current node to nextNode 
     currentNode = nextNode;
   }
   
   // retornar previous node
-  return previousNode;
+  return newNode;
 }
+
+// const a = new LinkedListNode(1);
+// const b = new LinkedListNode(2);
+// const c = new LinkedListNode(3);
+// const d = new LinkedListNode(4);
+
+// a.next = b;
+// b.next = c;
+// c.next = d;
+
+// console.log(reverse(a)); // 4 -> 3 -> 2 -> 1
