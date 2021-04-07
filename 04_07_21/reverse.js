@@ -9,6 +9,8 @@ class LinkedListNode {
   }
 }
 
+// Time and space complexity analysis
+// O(n) time and O(n) space, where n is the total number of nodes of the linked list
 function reverse(headOfList) {
   let currentNode = headOfList;
   let previousNode = null;
