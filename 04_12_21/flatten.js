@@ -6,6 +6,8 @@
    this.right = right;
  }
 
+ // Time and space complexity analysis
+ // O(n) time and O(1) space, where n is the total number of nodes in the binary tree input
 function flatten(root) {
   // handle case: root = null
   if (!root) return null;
