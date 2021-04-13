@@ -1,10 +1,10 @@
-class ListNode {
-  constructor(val) {
-    this.value = val;
-    this.left = null;
-    this.right = null;
-  }
-}
+// https://leetcode.com/problems/flatten-binary-tree-to-linked-list/submissions/
+
+ function TreeNode(val = 0, left = null, right = null) {
+   this.val = val;
+   this.left = left;
+   this.right = right;
+ }
 
 function flatten(root) {
   // handle case: root = null
@@ -32,12 +32,12 @@ function flatten(root) {
   return root;
 }
 
-const node1 = new ListNode(1);
-const node2 = new ListNode(2);
-const node3 = new ListNode(3);
-const node4 = new ListNode(4);
-const node5 = new ListNode(5);
-const node6 = new ListNode(6);
+const node1 = new TreeNode(1);
+const node2 = new TreeNode(2);
+const node3 = new TreeNode(3);
+const node4 = new TreeNode(4);
+const node5 = new TreeNode(5);
+const node6 = new TreeNode(6);
 
 node1.left = node2;
 node1.right = node5;
