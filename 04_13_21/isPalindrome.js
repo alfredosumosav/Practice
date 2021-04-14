@@ -1,8 +1,12 @@
- function ListNode(val, next) {
+// https://leetcode.com/problems/palindrome-linked-list/discuss/1137027/JS-Python-Java-C%2B%2B-or-Easy-Floyd's-%2B-Reversal-Solution-w-Explanation
+
+function ListNode(val, next) {
      this.val = (val===undefined ? 0 : val)
      this.next = (next===undefined ? null : next)
  }
 
+// Time and space complexity analysis
+// O(n) time and O(1) space, where n is the total number of nodes of the linked list
 var isPalindrome = function (head) {
   let slow = head, fast = head, prev, temp
   
