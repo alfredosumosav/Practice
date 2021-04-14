@@ -1,3 +1,6 @@
+// Time and space complexity analysis
+// O(nlog(n)) time and O(n) space, where n is the number of meetings
+// and in terms of space, worst-case scenario is: no overlapping meetings
 function mergeRanges(meetings) {
   // create a deep copy of the meetings array
   const meetingsCopy = JSON.parse(JSON.stringify(meetings));
