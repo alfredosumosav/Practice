@@ -12,8 +12,5 @@ function addDigits(num) {
   return sum;
 }
 
-// const num1 = 38;
-// const num2 = 0;
-
-// console.log(addDigits(num1)); // 2
-// console.log(addDigits(num2)); // 0
+// console.log(addDigits(38)); // 2
+// console.log(addDigits(0)); // 0
