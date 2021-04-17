@@ -1,23 +1,32 @@
-var isHappy = function (n) { // 2
-  const seen = new Set();
-  let sum = 0;
+// https://leetcode.com/problems/happy-number/submissions/
 
-  while (n > 0) { //  2 > 0
-    const remainder = n % 10; //     2,4,6,1,7,3,8,5,9,8,5,4,1,2,4,0,2,
-    n = Math.floor(n / 10); //       0,0,1,0,3,0,5,0,8,0,14,1,0,4,0,2,0,
-    sum = sum + (remainder ** 2); // 4,0,16,0,36,37,0,49,58,0,64,89,0,81,145,0,25,41,42,0,4,20,0,4
+var isHappy = function (n) {
+  const squaredDigitsSum = new Set(); // a set containing the sum of the squared digits of a number.
+  let runningSum = 0; // the sum of the squared digits of a number.
 
+  // get the sum of the squared digits of a number.
+  while (n > 0) {
+    const remainder = n % 10; // grab the last digit of a number.
+    n = Math.floor(n / 10); // reduce the number by 1 digit.
+    runningSum = runningSum + (remainder ** 2); // square the remainder and add it to the running sum.
 
+    // if we finished decomposing the number...
     if (n === 0) {
 
-      if (seen.has(sum)) return sum === 1;
+      // ...and we have seen this sum before, stop decomposing. (we reached an infinite cycle)
+      if (squaredDigitsSum.has(runningSum)) return runningSum === 1;
+      // The original input is a happy number if the final sum is 1
+      // ...otherwise it is not a happy number.
       
-      seen.add(sum);
-      n = sum; // 20
-      sum = 0; // 0
+      
+      // ...and we have NOT seen it before, we have NOT reached an infinite cycle.
+      // So, remember this value, decompose this number and reset the runningSum to 0.
+      squaredDigitsSum.add(runningSum);
+      n = runningSum;
+      runningSum = 0;
     }
   }
 };
 
-console.log(isHappy(19)); // true
-console.log(isHappy(2)); // false
+// console.log(isHappy(19)); // true
+// console.log(isHappy(2)); // false
