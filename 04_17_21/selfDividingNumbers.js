@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/self-dividing-numbers/
+
 // O(n) time and O(n) space, where n is the difference between the left and right bound
 var selfDividingNumbers = function(left, right) {
     const selfDividingNums = [];
