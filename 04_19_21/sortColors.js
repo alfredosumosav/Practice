@@ -2,17 +2,15 @@
 
 // O(n) time and O(1) space, where n is the number of elements in the input array
 var sortColors = function (nums) {
-  // tres constantes
+  // counters for each color.
   let red = 0;
   let white = 0;
   let blue = 0;
 
-  // contar cuantos rojos, blancos y azules hay
-  nums.forEach(num => {
-    num === 0 ? red++ : num === 1 ? white++ : blue++;
-  });
+  // count how many reds, whites and blues are.
+  nums.forEach(num => num === 0 ? red++ : num === 1 ? white++ : blue++);
 
-  // modifica el array, colocando los valores en orden (first 0s, then 1s and 2s)
+  // modify the array in-place, placing the values in order (first 0s, then 1s and 2s)
   for (let i = 0; i < nums.length; i++) {
     if (red) {
       nums[i] = 0;
