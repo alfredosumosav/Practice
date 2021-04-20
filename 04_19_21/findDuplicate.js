@@ -1,10 +1,16 @@
+// https://leetcode.com/problems/find-the-duplicate-number
+
+// O(n) time and O(n) space
 var findDuplicate = function(nums) {
+  // create a seen set
   let seen = new Set();
 
+  // traverse the nums array...
   for (const num of nums) {
+    // ... if has been seen before, this is my duplicate.
     if (seen.has(num)) return num;
 
-    // guardalo
+    // ... otherwise, has not been seen before, so remember it.
     seen.add(num);
   }
 }
