@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/sort-colors/
+
+// O(n) time and O(1) space, where n is the number of elements in the input array
 var sortColors = function (nums) {
   // tres constantes
   let red = 0;
