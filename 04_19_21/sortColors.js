@@ -3,8 +3,6 @@
 // O(n) time and O(1) space, where n is the number of elements in the input array
 var sortColors = function (nums) {
   // counters for each color.
-  // const color = ["", null]; // color
-  let nextColor, nextColorValue // color
   const colors = {
     red: 0,
     white: 0,
@@ -16,17 +14,15 @@ var sortColors = function (nums) {
 
   // modify the array in-place, placing the values in order (first 0s, then 1s and 2s)
   for (let i = 0; i < nums.length; i++) {
-    
+
     // what is the next color?
-    colors.red ? [nextColor, nextColorValue] = ["red", 0] : 
-    colors.white ? [nextColor, nextColorValue] = ["white", 1] : 
-    [nextColor, nextColorValue] = ["blue", 2];
+    const color = colors.red ? ["red", 0] : colors.white ? ["white", 1] : ["blue", 2];
     
     // change the current value to the integer representing the next color.
-    nums[i] = nextColorValue;
+    nums[i] = color[1];
 
     // decrease the color counter by 1.
-    colors[nextColor]--;
+    colors[color[0]]--;
   }
   
   return nums;
