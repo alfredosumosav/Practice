@@ -1,3 +1,8 @@
+
+// Time and space complexity
+// O(m*n) time and O(n) space, 
+// where m is the number of laps (given by sprints.length - 1) 
+// and n is the numer of markers (positions)
 function getMostVisited(n, sprints) {
   const visitedPositions = new Array(n).fill(0);
 
