@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/daily-temperatures/submissions/
+
+// O(n) time and O(n) space, where n is the number of elements in the input array
 var dailyTemperatures = function(T) {
     
     // edge cases
@@ -39,3 +42,5 @@ var dailyTemperatures = function(T) {
     }
     return result
 };
+
+console.log(dailyTemperatures([73,74,75,71,69,72,76,73])); // [1,1,4,2,1,1,0,0]
