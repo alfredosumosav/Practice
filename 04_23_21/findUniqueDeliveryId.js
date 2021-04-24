@@ -21,29 +21,21 @@ before takeoff.
 */
 
 // Time and space complexity analysis
-// O(n) time and O(n) space, where n is the number of elements inside the
+// O(n) time and O(1) space, where n is the number of elements inside the
 // deliveryIds input array.
 function findUniqueDeliveryId(deliveryIds) {
 
-  // create a set to store the ids
-  let pendingOrders = new Set();
+  var uniqueDeliveryId = 0;
 
-  // traverse the set and...
-  deliveryIds.forEach(id => {
-    // ...if we have seen the id before, remove it
-    if (pendingOrders.has(id)) {
-      pendingOrders.delete(id)
-    } else {
-      // ...otherwise, we haven't seen this id before, so remember that the order departed
-      pendingOrders.add(id)
-    }
+  // for each delivery id
+  deliveryIds.forEach(deliveryId => {
+    // XOR with previous id and update previous value
+    uniqueDeliveryId ^= deliveryId;
   });
 
-  // if the set has a remaining order that has not been removed, this is our stolen drone
-  // return the id
-  if (pendingOrders.size) return pendingOrders.values().next().value;
-
-  return null;
+  // if all ids are repeated except one, XOR will cancel those that repeat
+  // and leaving as a result the id that appears exactly once!
+  return uniqueDeliveryId;
 }
 
 console.log(findUniqueDeliveryId([1])); // 1
