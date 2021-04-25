@@ -1,8 +1,11 @@
+// https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
+
 function ListNode(val, next) {
     this.val = (val===undefined ? 0 : val)
     this.next = (next===undefined ? null : next)
 }
 
+// O(n) time and O(n) space, qhere n is the number of nodes in the linked list
 var getDecimal = function (head) {
   // create an accumulator and an array to store digits
   const digits = [];
@@ -28,6 +31,18 @@ var getDecimal = function (head) {
 
   return accumulator;
 }
+
+// O(n) time and O(1) space, qhere n is the number of nodes in the linked list
+// var getDecimal = function (head) {
+//   let ans = 0;
+
+//   while (head) {
+//       ans = (ans << 1) | head.val;
+//       head = head.next;
+//   }
+
+//   return ans;
+// }
 
 // 1 -> 0 -> 0 -> 1 -> 0 -> 0 -> 1 -> 1 -> 1 -> 0 -> 0 -> 0 -> 0 -> 0 -> 0
 let head = pointer = new ListNode(1);
