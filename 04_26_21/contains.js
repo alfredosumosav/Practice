@@ -1,3 +1,11 @@
+/*
+Suppose we had an array of n integers sorted in ascending order.
+
+How quickly could we check if a given integer is in the array?
+*/
+
+// Time and space complexity analysis
+// O(log(n)) time and O(1) space, where n is the number of elements in the input array
 function contains(array, value) {
     // See if value appears in array
 
