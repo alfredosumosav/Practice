@@ -27,7 +27,29 @@ function valuesToLinkedListNodes(values) {
 }
 
 function reverse(headOfList) {
-  return null;
+  let currentNode = headOfList; // the current node
+  let previousNode = null; // the previous node
+  let nextNode = null; // the next node
+
+  while (currentNode) {
+
+    // save a reference to the next node
+    nextNode = currentNode.next;
+
+    // the currentNode's next should point to the previous node
+    currentNode.next = previousNode;
+
+    // previousNode should point to the current node now
+    previousNode = currentNode;
+
+    // currentNode should be updated to the stored reference of nextNode
+    currentNode = nextNode;
+
+    // continue until currentNode is null and we have overflowed from the linked list
+  }
+
+  // our head will now be the reference pointing to the previousNode, after overflowing
+  return previousNode;
 }
 
 // Tests
