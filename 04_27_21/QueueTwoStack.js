@@ -36,37 +36,29 @@ class Stack {
 
 class QueueTwoStacks {
   constructor() {
-    this.firstStack = new Stack();
-    this.secondStack = new Stack();
+    this.inStack = new Stack();
+    this.outStack = new Stack();
   }
 
   enqueue(item) {
-    this.firstStack.push(item);
+    this.inStack.push(item);
   }
 
   dequeue() {
-    let oldestItem = null;
+    if (this.outStack.length() === 0) {
 
-    // move items from firstStack to secondStack
-    while (this.firstStack.items.length > 0) {
-      this.secondStack.push(this.firstStack.items.pop());
-    }
+      // move items from inStack to outStack, reversing order
+      while (this.inStack.length() > 0) {
+        const newestInStackItem = this.inStack.pop();
+        this.outStack.push(newestInStackItem);
+      }
 
-    // move items back from secondStack to firstStack
-    while (this.secondStack.items.length > 0) {
-      const newItem = this.secondStack.pop(); // the oldests elements in order of enqueuing
-
-      // oldestItem === null ? oldestItem = newItem : this.firstStack.push(newItem);
-      if (oldestItem === null) {
-      // if this is the oldest item, remember it, so we can return it at the end
-        oldestItem = newItem;
-      } else {
-      // otherwise, it is not the oldest item, so push it back to the stack in order
-        this.firstStack.push(newItem);
+      // if outStack is still empty, raise an error
+      if (this.outStack.length() === 0) {
+        throw new Error("Can't dequeue from an empty queue!");
       }
     }
-
-    return oldestItem;
+    return this.outStack.pop();
   }
 }
 
@@ -79,6 +71,6 @@ queue.enqueue('b');
 queue.enqueue('c');
 queue.dequeue();
 queue.enqueue('d');
-queue.dequeue();
+// queue.dequeue();
 
 console.log(queue);
