@@ -37,8 +37,8 @@ class Stack {
   }
 }
 
-// Implement the push, pop, and getMax methods
-
+// Time and space complexity analysis
+// O(1) time and O(m) space, where m is the number of elements in the stack
 class MaxStack {
   constructor() {
     this.stack = new Stack();
