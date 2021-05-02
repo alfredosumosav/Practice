@@ -1,3 +1,10 @@
+/*
+ You have a linked list and want to find the Kth to last node.
+
+Write a function kthToLastNode() that takes an integer kkk and the headNode of
+a singly-linked list, and returns the Kth to last node in the list.
+*/
+
 class LinkedListNode {
     constructor(value = null) {
         this.value = value;
@@ -5,6 +12,8 @@ class LinkedListNode {
     }
 }
 
+// Time and space complexity analysis
+// O(n) time and O(1) space, where n is the length of the linked list
 function kthToLastNode(k, headNode) {
 
   // contar la longitud de la linked list
