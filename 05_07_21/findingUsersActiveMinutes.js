@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/finding-the-users-active-minutes
+
 var findingUsersActiveMinutes = function(logs, k) {
 
   // create map of users, each pointing to the unique minutes in which they performed an action (UAMs)
