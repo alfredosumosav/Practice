@@ -8,23 +8,25 @@ class TreeNode {
 
 var deepestLeavesSum = function (root, h = 0, sum = 0) {
 
+  // if input is empty, return 0
+  if (!root) return 0;
+
+  // the max depth of the tree
   let maxDepth = -Infinity;
-  const stack = [root];
 
-  while (stack.length) {
-    h++;
-    const node = stack.pop();
-    // console.log(h)
-    if (node.right) stack.push(node.right);
-    if (node.left) stack.push(node.left);
+  // find the deepest level of the tree
+  const stack = [[root, 1]];
+  while (stack.length) { // []
 
-    // si no hay children guarda el depth
-    if (!node || (!node.left && !node.right)) {
-      maxDepth = Math.max(maxDepth, h);
+    // grab the next node, then if the right child exists, add
+    // it to the stack. Likewise with the left child.
+    const [node, nodeHeight] = stack.pop();
+    if (node.right) stack.push([node.right, nodeHeight + 1]);
+    if (node.left) stack.push([node.left, nodeHeight + 1]);
 
-      // llegamos a un leaf node, so reset h a 0
-      h = 0;
-    }
+    // if the current node is a leaf node, then if the depth id higher than the
+    // maxDepth stored, update maxDepth to this value
+    if ((!node.left && !node.right)) maxDepth = Math.max(maxDepth, nodeHeight);
   }
 
   // traverse the tree using DFS and when a node is at the deepest level, add
@@ -92,3 +94,4 @@ d.right = j;
 f.right = n;
 
 console.log(deepestLeavesSum(r2)); // 15
+console.log(deepestLeavesSum(null)); // 15
