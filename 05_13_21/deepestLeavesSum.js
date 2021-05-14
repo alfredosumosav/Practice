@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/deepest-leaves-sum/
+
 class TreeNode {
   constructor(val = 0, left = null, right = null) {
     this.val = val;
@@ -6,6 +8,9 @@ class TreeNode {
   }
 }
 
+
+// Time and Space complexity analysis
+// O(n) time and O(n) space, where n is the number of nodes in the tree
 var deepestLeavesSum = function (root, h = 0, sum = 0) {
 
   // if input is empty, return 0
