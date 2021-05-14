@@ -14,7 +14,7 @@ var deepestLeavesSum = function (root, h = 0, sum = 0) {
   while (stack.length) {
     h++;
     const node = stack.pop();
-    console.log(h)
+    // console.log(h)
     if (node.right) stack.push(node.right);
     if (node.left) stack.push(node.left);
 
@@ -27,18 +27,19 @@ var deepestLeavesSum = function (root, h = 0, sum = 0) {
     }
   }
 
-  stack.push(root);
+  // traverse the tree using DFS and when a node is at the deepest level, add
+  // its value to running sum
+  stack.push([root, 1]);
   while (stack.length) {
-    h++;
-    const node = stack.pop();
-    if (node.right) stack.push(node.right);
-    if (node.left) stack.push(node.left);
 
-    // si no hay children guarda el depth
-    if (h === maxDepth) {
-      sum += node.val;
-      h = 0;
-    }
+    // grab the next node value and height, then if the right child exists, add
+    // it to the stack with its height. Likewise with the left child.
+    const [node, nodeHeight] = stack.pop();
+    if (node.right) stack.push([node.right, nodeHeight + 1]);
+    if (node.left) stack.push([node.left, nodeHeight + 1]);
+
+    // if current node is in the deepest level, add it to the sum.
+    if (nodeHeight === maxDepth) sum += node.val;
   }
 
   return sum;
@@ -63,31 +64,31 @@ n6.right = n8;
 
 console.log(deepestLeavesSum(r1)); // 15
 
-// const r2 = new TreeNode(6);
-// const a = new TreeNode(7);
-// const b = new TreeNode(8);
-// const c = new TreeNode(2);
-// const d = new TreeNode(7);
-// const e = new TreeNode(1);
-// const f = new TreeNode(3);
-// const g = new TreeNode(9);
-// const h = null;
-// const i = new TreeNode(1);
-// const j = new TreeNode(4);
-// const k = null;
-// const l = null;
-// const m = null;
-// const n = new TreeNode(5);
+const r2 = new TreeNode(6);
+const a = new TreeNode(7);
+const b = new TreeNode(8);
+const c = new TreeNode(2);
+const d = new TreeNode(7);
+const e = new TreeNode(1);
+const f = new TreeNode(3);
+const g = new TreeNode(9);
+const h = null;
+const i = new TreeNode(1);
+const j = new TreeNode(4);
+const k = null;
+const l = null;
+const m = null;
+const n = new TreeNode(5);
 
-// r2.left = a;
-// r2.right = b;
-// a.left = c;
-// a.right = d;
-// b.left = e;
-// b.right = f;
-// c.left = g;
-// d.left = i;
-// d.right = j;
-// f.right = n;
+r2.left = a;
+r2.right = b;
+a.left = c;
+a.right = d;
+b.left = e;
+b.right = f;
+c.left = g;
+d.left = i;
+d.right = j;
+f.right = n;
 
-// console.log(deepestLeavesSum(r2)); // 15
+console.log(deepestLeavesSum(r2)); // 15
