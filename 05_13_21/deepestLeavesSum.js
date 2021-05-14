@@ -98,5 +98,5 @@ d.left = i;
 d.right = j;
 f.right = n;
 
-console.log(deepestLeavesSum(r2)); // 15
-console.log(deepestLeavesSum(null)); // 15
+console.log(deepestLeavesSum(r2)); // 19
+console.log(deepestLeavesSum(null)); // 0
