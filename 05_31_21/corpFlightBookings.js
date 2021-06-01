@@ -46,7 +46,51 @@ Constraints:
   1 <= firsti <= lasti <= n
   1 <= seatsi <= 104
 */
+/*
+bookingSeats = [];
+
+for (let i = 0; i < bookings.length; i++) {
+	const booking = bookings[i]; // [2, 2, 15]
+	countSeats(booking, bookingSeats);
+}
+
+return bookingSeats;
+
+function countSeats(booking, bookingSeats) { // [10, 25]
+
+	const [first, last, seats] = booking; // [2, 2, 15]
+
+	for (let i = first; i <= last; i++) { //
+
+		if (!!bookingSeats[`${i - 1}`]) {
+			bookingSeats[`${i - 1}`] += seats;
+		} else {
+			bookingSeats[`${i - 1}`] = seats;
+		}
+	}
+}
+*/
 
 var corpFlightBookings = function(bookings, n) {
-  return null;
+  const bookingSeats = [];
+
+  for (let i = 0; i < bookings.length; i++) {
+    const booking = bookings[i];
+    countSeats(booking, bookingSeats);
+  }
+
+  return bookingSeats;
+}
+
+function countSeats(booking, bookingSeats) {
+
+  const [first, last, seats] = booking;
+
+  for (let i = first; i <= last; i++) {
+    if (!!bookingSeats[`${i - 1}`]) {
+      bookingSeats[`${i - 1}`] += seats;
+    } else {
+      bookingSeats[`${i - 1}`] = seats;
+    }
+  }
 }
