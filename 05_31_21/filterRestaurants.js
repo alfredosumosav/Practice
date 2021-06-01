@@ -58,5 +58,16 @@ Constraints:
 */
 
 var filterRestaurants = function(restaurants, veganFriendly, maxPrice, maxDistance) {
-  return null;
-}
+
+  // filtrado
+  if (veganFriendly) restaurants = restaurants.filter(restaurant => restaurant[2] === 1);
+
+  restaurants = restaurants.filter(restaurant => restaurant[3] <= maxPrice).filter(restaurant => restaurant[4] <= maxDistance);
+
+  // ordenado
+  restaurants.sort((res1, res2) => {
+      return res2[1] - res1[1] !== 0 ? res2[1] - res1[1] : res2[0] - res1[0]
+  });
+
+  return restaurants.map(restaurant => restaurant[0]);
+};
